@@ -33,6 +33,29 @@ a {
     color: inherit;
 }
 
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    z-index: 1000;
+
+    background-color: rgba(255, 249, 240, 0.65);
+backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid rgba(23, 74, 74, 0.08);
+}
+
+main {
+    padding-top: 85px;
+}
+
+section {
+    scroll-margin-top: 100px;
+}
+
 .navbar {
     max-width: 1200px;
     margin: 0 auto;
@@ -94,6 +117,10 @@ a {
 }
 
 .hero-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
     margin-bottom: 20px;
 
     color: var(--secondary);
