@@ -455,8 +455,23 @@ a {
 /* FOOTER */
 
 .footer {
+    position: relative;
     background-color: var(--primary);
-    color: var(--white);
+}
+.footer-wave {
+    position: absolute;
+    top: -46px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.footer-wave svg {
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 
 .footer-content {
