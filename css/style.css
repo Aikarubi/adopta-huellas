@@ -21,6 +21,7 @@ body {
     font-family: Arial, sans-serif;
     background-color: var(--background);
     color: var(--text);
+    overflow-x: hidden;
 }
 
 img {
@@ -33,18 +34,16 @@ a {
     color: inherit;
 }
 
+/* HEADER / NAV */
 header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-
     z-index: 1000;
-
     background-color: rgba(255, 249, 240, 0.65);
-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-
     border-bottom: 1px solid rgba(23, 74, 74, 0.08);
 }
 
@@ -60,7 +59,6 @@ section {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px 30px;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -70,7 +68,6 @@ section {
     display: flex;
     align-items: center;
     gap: 10px;
-
     color: var(--primary);
     font-weight: 700;
 }
@@ -88,7 +85,6 @@ section {
 .nav-links a {
     font-size: 15px;
     font-weight: 600;
-
     transition: color 0.3s ease;
 }
 
@@ -96,14 +92,7 @@ section {
     color: var(--secondary);
 }
 
-
-/* =========================
-   HERO
-========================= */
-.hero {
-    position: relative;
-}
-
+/* HERO */
 .hero {
     position: relative;
     min-height: calc(100vh - 85px);
@@ -120,16 +109,19 @@ section {
     display: flex;
     align-items: center;
     gap: 8px;
-
     margin-bottom: 20px;
-
     color: var(--secondary);
     font-weight: 700;
 }
 
+.hero-label svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
 .hero h1 {
     margin-bottom: 25px;
-
     color: var(--primary);
     font-size: 64px;
     line-height: 1.05;
@@ -143,7 +135,6 @@ section {
 .hero-description {
     max-width: 500px;
     margin-bottom: 35px;
-
     font-size: 20px;
     line-height: 1.6;
 }
@@ -152,19 +143,12 @@ section {
     display: inline-flex;
     align-items: center;
     gap: 12px;
-
     padding: 15px 25px;
-
     background-color: var(--primary);
     color: var(--white);
-
     border-radius: 50px;
-
     font-weight: 700;
-
-    transition:
-        background-color 0.3s ease,
-        transform 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .hero-button:hover {
@@ -172,14 +156,9 @@ section {
     transform: translateY(-3px);
 }
 
-
-/* =========================
-   HERO IMAGE
-========================= */
-
+/* HERO IMAGE */
 .hero-image {
     position: relative;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -198,67 +177,19 @@ section {
     position: relative;
     z-index: 1;
     width: 600px;
+    max-width: none;
     filter: drop-shadow(0 20px 20px rgba(38, 50, 56, 0.15));
 }
 
-/* =========================
-   ANIMALS
-========================= */
-
-.animals {
-    position: relative;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 170px 30px 100px;
-    z-index: 1;
-}
-
-/* Fondo beige de la sección */
-
-.animals::before {
-    content: "";
-    position: absolute;
-    top: 150px;
-    bottom: 0;
-    left: 50%;
-    width: 100vw;
-    transform: translateX(-50%);
-
-    background-color: var(--background-alt);
-
-    z-index: -2;
-}
-
-/* Wave */
-
-.animals-wave {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 100vw;
-    height: 170px;
-    transform: translateX(-50%);
-
-    z-index: -1;
-    pointer-events: none;
-}
-
-.animals-wave svg {
-    display: block;
-    width: 100%;
-    height: 100%;
-}
-
+/* SHARED SECTION HEADER */
 .section-header {
     max-width: 650px;
     margin: 0 auto 60px;
-
     text-align: center;
 }
 
 .section-label {
     margin-bottom: 15px;
-
     color: var(--secondary);
     font-size: 14px;
     font-weight: 700;
@@ -267,87 +198,123 @@ section {
 
 .section-header h2 {
     margin-bottom: 20px;
-
     color: var(--primary);
     font-size: 45px;
+    line-height: 1.1;
 }
 
-.section-header>p:last-child {
+.section-header > p:last-child {
     font-size: 18px;
     line-height: 1.6;
 }
 
+/* CARE */
+.care {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 170px 30px 100px;
+    isolation: isolate;
+}
 
-/* TARJETAS */
+.care::before {
+    content: "";
+    position: absolute;
+    top: 150px;
+    bottom: 0;
+    left: 50%;
+    width: 100vw;
+    transform: translateX(-50%);
+    background-color: var(--background-alt);
+    z-index: -2;
+}
 
-.animals-grid {
+.care-wave {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100vw;
+    height: 170px;
+    transform: translateX(-50%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.care-wave svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.care-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
 }
 
-.animal-card {
+.care-card {
+    padding: 35px;
     background-color: var(--white);
-
-    overflow: hidden;
-
     border-radius: 20px;
 }
 
-.animal-image {
-    height: 300px;
-    overflow: hidden;
-}
-
-.animal-image img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-}
-
-.animal-info {
-    padding: 25px;
-}
-
-.animal-info h3 {
-    margin-bottom: 8px;
-
-    color: var(--primary);
-    font-size: 25px;
-}
-
-.animal-info p {
-    margin-bottom: 20px;
-
-    color: var(--text);
-}
-
-.animal-info a {
+.care-number {
+    margin-bottom: 25px;
     color: var(--secondary);
+    font-size: 18px;
     font-weight: 700;
 }
 
-.animals-button {
-    margin-top: 50px;
+.care-card h3 {
+    margin-bottom: 15px;
+    color: var(--primary);
+    font-size: 27px;
+}
 
+.care-card p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.care-button {
+    margin-top: 50px;
     text-align: center;
 }
 
-.animals-button a {
+.care-button a {
     display: inline-block;
-
     padding: 14px 25px;
-
     border: 2px solid var(--primary);
     border-radius: 50px;
-
     color: var(--primary);
     font-weight: 700;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.care-button a:hover {
+    background-color: var(--primary);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+/* CARE TRANSITION */
+.care-transition {
+    position: relative;
+    width: 100%;
+    height: 140px;
+    margin-top: -1px;
+    overflow: hidden;
+    line-height: 0;
+    pointer-events: none;
+}
+
+.care-transition svg {
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 
 /* HOW IT WORKS */
-
 .how-it-works {
     max-width: 1200px;
     margin: 0 auto;
@@ -385,7 +352,6 @@ section {
 }
 
 /* ABOUT */
-
 .about {
     max-width: 1200px;
     margin: 0 auto;
@@ -433,10 +399,16 @@ section {
     border-radius: 50px;
     color: var(--primary);
     font-weight: 700;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.about-button:hover {
+    background-color: var(--primary);
+    color: var(--white);
+    transform: translateY(-2px);
 }
 
 /* CTA */
-
 .cta {
     max-width: 1200px;
     margin: 0 auto;
@@ -463,7 +435,7 @@ section {
 }
 
 .cta p:not(.section-label) {
-    max-width: 600px;
+    max-width: 650px;
     margin: 0 auto 30px;
     color: var(--white);
     font-size: 18px;
@@ -475,19 +447,25 @@ section {
     padding: 15px 28px;
     background-color: var(--secondary);
     color: var(--white);
+    border: 0;
     border-radius: 50px;
+    font-family: inherit;
+    font-size: 16px;
     font-weight: 700;
+    cursor: not-allowed;
+    opacity: 1;
 }
 
 /* FOOTER */
-
 .footer {
     position: relative;
     background-color: var(--primary);
+    color: var(--white);
 }
+
 .footer-wave {
     position: absolute;
-    top: -46px;
+    top: -80px;
     left: 0;
     width: 100%;
     height: 100px;
@@ -561,44 +539,130 @@ section {
     font-size: 13px;
 }
 
-.paw-icon {
-    width: 18px;
-    height: 18px;
-    color: var(--secondary);
-}
+/* =========================
+   DECORATIVE PAWS
+========================= */
 
 .decorative-paw {
     position: absolute;
+    width: 42px;
+    height: 42px;
+
     color: var(--secondary);
-    opacity: 0.35;
+    opacity: 0.34;
+
+    pointer-events: none;
+    z-index: 0;
 }
 
+.decorative-paw.paw-front {
+    z-index: 2;
+    opacity: 0.24;
+}
+
+.hero,
+.care,
+.how-it-works,
+.about,
+.cta {
+    position: relative;
+}
+
+.hero-content,
+.hero-image,
+.care .section-header,
+.care-grid,
+.care-button,
+.how-it-works .section-header,
+.steps,
+.about-image,
+.about-content,
+.cta-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* HERO */
 .paw-1 {
-    top: 80px;
-    left: 40px;
-    transform: rotate(-20deg);
+    top: 92px;
+    left: 50px;
+    width: 34px;
+    height: 34px;
+    transform: rotate(-18deg);
 }
 
 .paw-2 {
-    top: 180px;
-    right: 30px;
-    transform: rotate(25deg);
+    top: 245px;
+    left: 355px;
+    width: 48px;
+    height: 48px;
+    transform: rotate(17deg);
 }
 
 .paw-3 {
-    bottom: 100px;
-    left: 80px;
-    transform: rotate(10deg);
+    right: 52px;
+    bottom: 58px;
+    width: 40px;
+    height: 40px;
+    transform: rotate(-24deg);
 }
 
+/* CARE */
 .paw-4 {
-    bottom: 50px;
-    right: 100px;
-    transform: rotate(-15deg);
+    top: 190px;
+    left: 48px;
+    width: 36px;
+    height: 36px;
+    transform: rotate(14deg);
 }
 
-html,
-body {
-    overflow-x: hidden;
+.paw-5 {
+    top: 305px;
+    right: 56px;
+    width: 52px;
+    height: 52px;
+    transform: rotate(-20deg);
 }
 
+/* HOW IT WORKS */
+.paw-6 {
+    top: 85px;
+    right: 82px;
+    width: 34px;
+    height: 34px;
+    transform: rotate(24deg);
+}
+
+.paw-7 {
+    bottom: 82px;
+    left: 78px;
+    width: 46px;
+    height: 46px;
+    transform: rotate(-12deg);
+}
+
+/* ABOUT */
+.paw-8 {
+    top: 44px;
+    left: 52px;
+    width: 38px;
+    height: 38px;
+    transform: rotate(-16deg);
+}
+
+.paw-9 {
+    right: 34px;
+    bottom: 74px;
+    width: 50px;
+    height: 50px;
+    transform: rotate(18deg);
+}
+
+/* CTA */
+.paw-10 {
+    top: 40px;
+    right: 72px;
+    width: 44px;
+    height: 44px;
+    transform: rotate(-14deg);
+}
