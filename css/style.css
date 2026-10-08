@@ -1,10 +1,10 @@
 :root {
-  --primary: #174A4A;
-  --secondary: #E99A3A;
-  --background: #FFF9F0;
-  --background-alt: #F3E8D5;
-  --text: #263238;
-  --white: #FFFFFF;
+    --primary: #174A4A;
+    --secondary: #E99A3A;
+    --background: #FFF9F0;
+    --background-alt: #F3E8D5;
+    --text: #263238;
+    --white: #FFFFFF;
 }
 
 * {
@@ -81,24 +81,12 @@ a {
     position: relative;
 }
 
-.hero::after {
-    content: "";
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    width: 100%;
-    height: 80px;
-    background-color: var(--background);
-    border-radius: 50% 50% 0 0;
-}
-
 .hero {
-    max-width: 1200px;
+    position: relative;
     min-height: calc(100vh - 85px);
-
+    max-width: 1200px;
     margin: 0 auto;
     padding: 60px 30px;
-
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
@@ -147,7 +135,7 @@ a {
 
     font-weight: 700;
 
-    transition: 
+    transition:
         background-color 0.3s ease,
         transform 0.3s ease;
 }
@@ -172,10 +160,10 @@ a {
 
 .hero-circle {
     position: absolute;
-    width: 500px;
-    height: 500px;
+    width: 430px;
+    height: 430px;
     background-color: var(--secondary);
-    border-radius: 60% 40% 55% 45% / 45% 55% 40% 60%;
+    border-radius: 48% 52% 45% 55% / 55% 45% 55% 45%;
     z-index: 0;
 }
 
@@ -191,9 +179,47 @@ a {
 ========================= */
 
 .animals {
+    position: relative;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 100px 30px;
+    padding: 170px 30px 100px;
+    z-index: 1;
+}
+
+/* Fondo beige de la sección */
+
+.animals::before {
+    content: "";
+    position: absolute;
+    top: 150px;
+    bottom: 0;
+    left: 50%;
+    width: 100vw;
+    transform: translateX(-50%);
+
+    background-color: var(--background-alt);
+
+    z-index: -2;
+}
+
+/* Wave */
+
+.animals-wave {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100vw;
+    height: 170px;
+    transform: translateX(-50%);
+
+    z-index: -1;
+    pointer-events: none;
+}
+
+.animals-wave svg {
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 
 .section-header {
@@ -219,7 +245,7 @@ a {
     font-size: 45px;
 }
 
-.section-header > p:last-child {
+.section-header>p:last-child {
     font-size: 18px;
     line-height: 1.6;
 }
@@ -528,3 +554,9 @@ a {
     right: 100px;
     transform: rotate(-15deg);
 }
+
+html,
+body {
+    overflow-x: hidden;
+}
+
