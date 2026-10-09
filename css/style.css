@@ -649,3 +649,153 @@ footer {
     z-index: 1;
     opacity: 0.25;
 }
+
+/* =========================
+   PÁGINA NOSOTROS
+========================= */
+
+.about-page-hero {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 65px 30px 95px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 70px;
+}
+
+.about-page-hero-content {
+    max-width: 560px;
+}
+
+.about-page-hero h1 {
+    margin-bottom: 24px;
+    color: var(--primary);
+    font-size: 60px;
+    line-height: 1.06;
+}
+
+.about-page-hero p:not(.section-label) {
+    max-width: 520px;
+    font-size: 19px;
+    line-height: 1.7;
+}
+
+.about-page-hero-image {
+    height: 500px;
+    overflow: hidden;
+    border-radius: 30px;
+}
+
+.about-page-hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-story {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 85px 30px;
+    display: grid;
+    grid-template-columns: 0.95fr 1fr;
+    align-items: center;
+    gap: 75px;
+}
+
+.about-story-image {
+    height: 440px;
+    overflow: hidden;
+    border-radius: 28px;
+}
+
+.about-story-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-story-content {
+    max-width: 520px;
+}
+
+.about-story-content h2,
+.about-purpose-intro h2 {
+    margin-bottom: 22px;
+    color: var(--primary);
+    font-size: 42px;
+    line-height: 1.12;
+}
+
+.about-story-content p:not(.section-label) {
+    margin-bottom: 18px;
+    font-size: 17px;
+    line-height: 1.75;
+}
+
+.about-purpose {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 85px 30px 100px;
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    align-items: start;
+    gap: 75px;
+}
+
+.about-purpose-intro {
+    max-width: 460px;
+}
+
+.about-purpose-intro h2 {
+    font-size: 44px;
+}
+
+.about-purpose-content > p {
+    margin-bottom: 28px;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.about-purpose-point {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 18px;
+    padding: 22px 0;
+    border-top: 1px solid rgba(23, 74, 74, 0.16);
+}
+
+.about-purpose-point:last-of-type {
+    border-bottom: 1px solid rgba(23, 74, 74, 0.16);
+}
+
+.about-purpose-point > span {
+    color: var(--secondary);
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.about-purpose-point h3 {
+    margin-bottom: 7px;
+    color: var(--primary);
+    font-size: 21px;
+}
+
+.about-purpose-point p {
+    font-size: 16px;
+    line-height: 1.65;
+}
+
+.about-purpose-link {
+    display: inline-block;
+    margin-top: 28px;
+    color: var(--primary);
+    font-weight: 700;
+    border-bottom: 2px solid var(--secondary);
+    padding-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+.about-purpose-link:hover {
+    color: var(--secondary);
+}
