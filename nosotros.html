@@ -1,22 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
 
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Sobre nosotros | Adopta Huellas</title>
-
-    <meta
-        name="description"
-        content="Conoce la historia de Adopta Huellas, nuestra misión de bienestar animal y nuestro compromiso con las adopciones responsables."
-    >
-
+    <meta name="description" content="Conoce la historia de Adopta Huellas, nuestra misión de bienestar animal y nuestro compromiso con las adopciones responsables.">
     <meta name="theme-color" content="#FFF9F0">
-
     <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
 </head>
 
 <body>
@@ -24,16 +17,21 @@
     <header>
         <nav class="navbar" aria-label="Navegación principal">
             <a href="index.html#inicio" class="logo">
-                <img src="assets/images/logo.png" alt="Adopta Huellas">
+                <img src="assets/images/logo.png" alt="" width="45" height="45" decoding="async">
                 <span>Adopta Huellas</span>
             </a>
 
-            <div class="nav-links">
+            <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
+
+            <div class="nav-links" id="nav-links">
                 <a href="index.html#inicio">Inicio</a>
                 <a href="index.html#proceso">Proceso</a>
                 <a href="index.html#cuidados">Cuidados</a>
                 <a href="nosotros.html" aria-current="page">Nosotros</a>
-                <a href="index.html#contacto">Contacto</a>
             </div>
         </nav>
     </header>
@@ -52,13 +50,15 @@
             </div>
 
             <div class="about-page-hero-image">
-                <img src="assets/images/volunt.jpg" alt="Una voluntaria comparte un momento con un perro">
+                <img src="assets/images/volunt.webp" alt="Una voluntaria comparte un momento con un perro" fetchpriority="high" decoding="async" fetchpriority="high" decoding="async">
             </div>
         </section>
 
         <section class="about-story">
             <div class="about-story-image">
-                <img src="assets/images/img-hero.jpg" alt="Un gatito bebé en busca de un hogar.">
+                <img src="assets/images/img-cat.jpg"
+                    sizes="(max-width: 820px) calc(100vw - 40px), (max-width: 1200px) 45vw, 520px"
+                    alt="Un gato bebé buscando un hogar" fetchpriority="high" decoding="async">
             </div>
 
             <div class="about-story-content">
